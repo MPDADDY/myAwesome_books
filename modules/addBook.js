@@ -10,14 +10,14 @@ const addBook = () => {
     localStorage.setItem('savedBooks', JSON.stringify(savedBooks));
   };
   if (title && author) {
-    savedBooks.push({title, author});
+    savedBooks.push({ title, author });
     updateLocalStorage();
   }
   const addButton = document.getElementById('add');
 
   const handleOnClickAddBook = (event) => {
     event.preventDefault();
-    addBook(); 
+    addBook();
     renderBooks();
     bookTitle.value = '';
     bookAuthor.value = '';

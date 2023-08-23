@@ -7,7 +7,7 @@ const renderBooks = () => {
   savedBooks.forEach((book, index) => {
     const bookDiv = document.createElement('div');
     bookDiv.className = 'book';
-    bookDiv.innerHTML = `"${ book.title }" by ${ book.author }`;
+    bookDiv.innerHTML = `"${book.title}" by ${book.author}`;
     const removeBtn = document.createElement('button');
     removeBtn.innerHTML = 'Remove';
     removeBtn.addEventListener('click', () => {
