@@ -10,7 +10,7 @@ const addBook = () => {
     localStorage.setItem('savedBooks', JSON.stringify(savedBooks));
   };
   if (title && author) {
-    savedBooks.push({ title, author });
+    savedBooks.push({ title, author, id: Math.floor(Math.random() * 1000) });
     updateLocalStorage();
   }
   const addButton = document.getElementById('add');

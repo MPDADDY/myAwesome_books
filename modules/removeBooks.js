@@ -1,10 +1,9 @@
-const savedBooks = JSON.parse(localStorage.getItem('savedBooks')) || [];
-const updateLocalStorage = () => {
-  localStorage.setItem('savedBooks', JSON.stringify(savedBooks));
+const updateLocalStorage = (books) => {
+  localStorage.setItem('savedBooks', JSON.stringify(books));
 };
-const removeBook = (index) => {
-  savedBooks.splice(index, 1);
-  updateLocalStorage();
+const removeBook = (id, savedBooks) => {
+  const books = savedBooks.filter((book) => book.id !== id);
+  updateLocalStorage(books);
 };
 
 export default removeBook;

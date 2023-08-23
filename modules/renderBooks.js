@@ -4,14 +4,14 @@ const renderBooks = () => {
   const savedBooks = JSON.parse(localStorage.getItem('savedBooks')) || [];
   const article = document.getElementById('bookList');
   article.innerHTML = '';
-  savedBooks.forEach((book, index) => {
+  savedBooks.forEach((book) => {
     const bookDiv = document.createElement('div');
     bookDiv.className = 'book';
     bookDiv.innerHTML = `"${book.title}" by ${book.author}`;
     const removeBtn = document.createElement('button');
     removeBtn.innerHTML = 'Remove';
     removeBtn.addEventListener('click', () => {
-      removeBook(index);
+      removeBook(book.id, savedBooks);
       renderBooks();
     });
     bookDiv.appendChild(removeBtn);
